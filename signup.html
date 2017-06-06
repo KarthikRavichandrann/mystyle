@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app=myApp>
+  <head>
+    <meta charset="utf-8">
+
+    <title >Cardo</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="script.js"></script>
+<div class="navbar-fixed">
+    <nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo left padding-left"><i class="fa fa-credit-card" aria-hidden="false"></i>Cardo</a>
+
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+
+    </ul>
+  </div>
+</nav>
+</div>
+<style>
+.nav-wrapper{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.padding-left{
+  padding-left: 2cm;
+}
+body{
+  background-color: rgba(127, 0, 0, 0.4);
+}
+.waves-effect{
+  background-color : #a1887f;
+}
+h1, h2{
+  font-family: fagita;
+}
+.container{
+  max-width: 270px;
+
+}
+.fb-login-button{
+  align-content: center;
+}
+.btn:hover {
+  background-color: rgb(0, 0, 0);
+}
+.brand-logo{
+	font-family: sans-serif;
+	margin-left: 2%;
+}
+</style>
+
+  </head>
+
+  <body>
+    <div class="container" ng-controller="AppCtrl">
+
+<div class="section-wrapper ">
+<div class="text-center white-text center-align">
+    <h1>Sign Up</h1>
+  </div>
+<div class="container">
+  <div class="text-center white-text left-align">
+
+          <thead>
+
+      </thead>
+      <tbody>
+        <tr>
+        <th>Email</th>
+          <td><input class="form-control" ng-model="contact.email"></td>
+          <th>Password</th>
+          <td><input class="form-control" type="password" ng-model="contact.password"></td>
+          <td><button class="btn btn-primary" ng-click="addContact()">Sign Up</button></td>
+
+        </tr>
+    <div>
+<p>OR</p>
+</div>
+<p>Sign up with your Google Account!!</p>
+  </div>
+  </div>
+
+  <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <br><br>
+          <br><br>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="controllers/controller.js"></script>
+  </body>
+</html>

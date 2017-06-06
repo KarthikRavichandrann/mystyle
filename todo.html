@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>To Do List App</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="metisMenu.min.css" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link href="sb-admin-2.css" rel="stylesheet">
+    <link href="mystyle.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" ng-app="ToDoList" ng-cloak ng-controller="myCtrl" style="background-image: url(http://magic4walls.com/wp-content/uploads/2014/02/style-girl-drawing-art-creative-background-wood-heart.jpg);" >
+ <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><i class="fa fa-credit-card" aria-hidden="false"></i> Cardo</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                   
+                    <li>
+                        <a class="page-scroll" href="#portfolio">About</a>
+                    </li>
+                    <li>
+                        <a href="http://www.fb.com">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+   
+                <div class="container" style="max-width:400px;">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                        
+                        <header>
+      						<h3>To Do List</h3>
+    					</header>
+
+                        
+                        
+                        </div>
+
+                        <div class="panel-body">
+
+    						<div align="center">
+                        	<input id="textfield1" type="text" placeholder="Task!" ng-model="todo.name" class="w3-input w3-border w3-padding">
+                        	
+
+         				 	 <textarea id="textfield2" type="text" placeholder="Content Here!" ng-model="todo.progress" class="w3-input w3-border w3-padding" ></textarea>
+         				 	<br>
+         				 	<input type="date" id="myDate" ng-model="todo.date" value="2012-03-21">
+         				 	</div>
+
+         				 	
+               
+		                        </div>
+                        <div class="panel-footer">
+                     <div align="right">
+         				 	<button ng-click="saveItem()" class="btn btn-outline btn-warning" style="">Save</button>
+         				 	<button ng-click="addItem()" class="btn btn-outline btn-warning">Update</button>
+                        </div>
+                     </div>
+                        
+                    </div>
+
+                </div>
+                <!-- /.col-lg-4 -->
+
+
+
+
+                <div  align="center"  >
+		         <ul class="w3-ul" style="max-width:410px;">
+
+		         
+
+  					<div>
+  					<li ng-repeat="x in todos">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                        
+                        <header align="left">
+      						<h3>Task:</h3>{{x.name}}
+    					</header>
+
+					 </div>
+					 <div class="panel-body">
+
+    						<div align="left"">
+                        	<h3>Content:</h3>{{x.progress}}<br>
+		        			 <h3>Date:</h3>{{x.date | date}}
+
+         				 	</div>
+
+
+
+
+         				 	 </div>
+                        <div class="panel-footer">
+                     <div align="right">
+                      <span  ng-click="editItem(x._id)" style="cursor:pointer;"><button class="btn btn-outline btn-warning">Edit</button><span>
+				 <span ng-click="removeItem(x._id)" style="cursor:pointer;"><button class="btn btn-outline btn-warning">Del</button></span></li>
+         				 	
+                        </div>
+                     </div>
+                        
+                    </div>
+
+                </div>
+		    	
+		    	 </ul>
+		    	 </div>
+         
+   
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+	<script type="text/javascript" src="controller.js"></script>
+</body>
+
+</html>
